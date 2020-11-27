@@ -7,8 +7,10 @@ abstract class TodoFormState extends Equatable {
   List<Object> get props => [];
 }
 
-class TodoFormInitialState extends TodoFormState {
+class TodoFormInitialState extends TodoFormState {}
 
-  @override
-  List<Object> get props => [];
-}
+class TodoFormAddSuccessState extends TodoFormState {}
+
+class TodoFormAddFailState extends TodoFormState {}
+
+class TodoFormLoadingState extends TodoFormState {}

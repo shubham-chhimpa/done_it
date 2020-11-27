@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:done_it/core/error/failures.dart';
 import 'package:done_it/core/usecases/usecase.dart';
-import 'package:done_it/feature/todo/domain/entities/todo.dart';
 import 'package:done_it/feature/todo/domain/repositories/todo_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
@@ -13,15 +12,15 @@ class AddTodo implements UseCase<void, Params> {
 
   @override
   Future<Either<Failure, void>> call(Params params) {
-    return todoRepository.addTodo(params.todo);
+    return todoRepository.addTodo(params.task);
   }
 }
 
 class Params extends Equatable {
-  final Todo todo;
+  final String task;
 
-  Params({@required this.todo});
+  Params({@required this.task});
 
   @override
-  List<Object> get props => [todo];
+  List<Object> get props => [task];
 }

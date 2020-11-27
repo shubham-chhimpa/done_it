@@ -24,16 +24,18 @@ void main() {
 
     final tTodo = tTodoModel;
 
-    test("should return todo data when local data source is success", () async {
-      // arrange
-      when(mockLocalDataSource.getTodo(any))
-          .thenAnswer((_) async => tTodoModel);
-      // act
-      final result = await todoRepositoryImpl.getTodo(tId);
-      // assert
-      verify(mockLocalDataSource.getTodo(tId));
-      expect(result, Right(tTodo));
-    });
+    test(
+        "should return todo data when the call to local data source is success",
+            () async {
+          // arrange
+          when(mockLocalDataSource.getTodo(any))
+              .thenAnswer((_) async => tTodoModel);
+          // act
+          final result = await todoRepositoryImpl.getTodo(tId);
+          // assert
+          verify(mockLocalDataSource.getTodo(tId));
+          expect(result, Right(tTodo));
+        });
 
     test("should return Database failure when call to database is unsuccessful",
             () async {
@@ -43,6 +45,68 @@ void main() {
           final result = await todoRepositoryImpl.getTodo(tId);
           // assert
           verify(mockLocalDataSource.getTodo(tId));
+          expect(result, Left(DataBaseFailure()));
+        });
+  });
+
+  group("getAllTodo", () {
+    final List<TodoModel> tAllTodoModel = [
+      TodoModel(
+        task: 'task1',
+        id: 1,
+      ),
+      TodoModel(
+        task: 'task2',
+        id: 2,
+      )
+    ];
+    test("should return list of todo when call to local database is successful",
+            () async {
+          // arrange
+          when(mockLocalDataSource.getAllTodo())
+              .thenAnswer((realInvocation) async => tAllTodoModel);
+          // act
+          final result = await todoRepositoryImpl.getAllTodo();
+          // assert
+          expect(result, Right(tAllTodoModel));
+        });
+
+    test("should return Database failure when call to database is unsuccessful",
+            () async {
+          // arrange
+          when(mockLocalDataSource.getAllTodo()).thenThrow(DataBaseException());
+          // act
+          final result = await todoRepositoryImpl.getAllTodo();
+          // assert
+          verify(mockLocalDataSource.getAllTodo());
+          expect(result, Left(DataBaseFailure()));
+        });
+  });
+
+  group("addTodo", () {
+    final tId = 1;
+    String tTask = 'test';
+    final tTodo = TodoModel(task: tTask, id: tId);
+
+    test("should return new added todo when call to local database is successful",
+            () async {
+          // arrange
+          when(mockLocalDataSource.addTodo(tTask))
+              .thenAnswer((realInvocation) async => tTodo);
+          // act
+          final result = await todoRepositoryImpl.addTodo(tTask);
+          // assert
+          expect(result, Right(tTodo));
+        });
+
+    test("should return Database failure when call to database is unsuccessful",
+            () async {
+          // arrange
+          when(mockLocalDataSource.addTodo(any)).thenThrow(DataBaseException());
+          // act
+          final result = await todoRepositoryImpl.addTodo(tTask)  ;
+          // assert
+          verify(mockLocalDataSource.addTodo(tTask));
           expect(result, Left(DataBaseFailure()));
         });
   });

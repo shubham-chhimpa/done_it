@@ -7,15 +7,11 @@ abstract class TodoFormEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class TodoChanged extends TodoFormEvent {
-  const TodoChanged({@required this.todo});
+class TodoFormAddEvent extends TodoFormEvent {
+  final String task;
 
-  final Todo todo;
+  TodoFormAddEvent({this.task});
 
   @override
-  List<Object> get props => [todo];
+  List<Object> get props => [task];
 }
-
-class TodoUnfocused extends TodoFormEvent {}
-
-class TodoSubmitted extends TodoFormEvent {}

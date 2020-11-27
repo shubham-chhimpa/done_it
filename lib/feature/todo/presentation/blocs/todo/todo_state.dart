@@ -21,5 +21,3 @@ class TodoLoadSuccess extends TodoState {
 }
 
 class TodoLoadFailed extends TodoState {}
-class TodoAddFailed extends TodoState {}
-class TodoAddSuccess extends TodoState {}
