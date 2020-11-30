@@ -13,6 +13,6 @@ jobs:
       - uses : subosito/flutter-action@v1
         with:
           channel : "stable"
-        - run: flutter pub get
-        - run: flutter pub analyse
-        - run: flutter pub test
+      - run: flutter pub get
+      - run: flutter pub analyse
+      - run: flutter pub test
