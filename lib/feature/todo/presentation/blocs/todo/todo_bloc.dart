@@ -22,8 +22,8 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
       yield TodoLoadingState();
       final todoListFailedOrSuccess = await getAllTodo(NoParams());
       yield todoListFailedOrSuccess.fold(
-            (l) => TodoLoadFailed(),
-            (r) => TodoLoadSuccess(todoList: r),
+            (l) => TodoLoadFailedState(),
+            (r) => TodoLoadSuccessState(todoList: r),
       );
     }
   }

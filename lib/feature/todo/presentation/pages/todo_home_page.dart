@@ -38,7 +38,7 @@ class TodoHomePage extends StatelessWidget {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state is TodoLoadSuccess) {
+            } else if (state is TodoLoadSuccessState) {
               return Padding(
                 padding: EdgeInsets.all(8),
                 child: GridView.builder(
@@ -64,7 +64,7 @@ class TodoHomePage extends StatelessWidget {
                       crossAxisCount: 2),
                 ),
               );
-            } else if (state is TodoLoadFailed) {
+            } else if (state is TodoLoadFailedState) {
               return Center(
                 child: Text("Error Loading"),
               );
