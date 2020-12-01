@@ -43,14 +43,14 @@ void main() {
     );
 
     test(
-      'should emit [TodoLoadingState, TodoLoadSuccess] when data is gotten successfully',
+      'should emit [TodoLoadingState, TodoLoadSuccessState] when data is gotten successfully',
           () async {
         // arrange
         when(mockGetAllTodo(any)).thenAnswer((_) async => Right(allTodo));
         // assert later
         final expected = [
           TodoLoadingState(),
-          TodoLoadSuccess(todoList: allTodo),
+          TodoLoadSuccessState(todoList: allTodo),
         ];
         expectLater(todoBloc, emitsInOrder(expected));
         // act
@@ -59,7 +59,7 @@ void main() {
     );
 
     test(
-      'should emit [TodoLoadingState, TodoLoadFailed] when getting data fails',
+      'should emit [TodoLoadingState, TodoLoadFailedState] when getting data fails',
           () async {
         // arrange
         when(mockGetAllTodo(any))
@@ -67,7 +67,7 @@ void main() {
         // assert later
         final expected = [
           TodoLoadingState(),
-          TodoLoadFailed(),
+          TodoLoadFailedState(),
         ];
         expectLater(todoBloc, emitsInOrder(expected));
         // act

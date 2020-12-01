@@ -11,13 +11,13 @@ class TodoInitialState extends TodoState {}
 
 class TodoLoadingState extends TodoState {}
 
-class TodoLoadSuccess extends TodoState {
+class TodoLoadSuccessState extends TodoState {
   final List<Todo> todoList;
 
-  TodoLoadSuccess({this.todoList});
+  TodoLoadSuccessState({this.todoList});
 
   @override
   List<Object> get props => [];
 }
 
-class TodoLoadFailed extends TodoState {}
+class TodoLoadFailedState extends TodoState {}
