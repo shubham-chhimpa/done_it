@@ -1,7 +1,7 @@
 
 # DoneIt 📝
 
-![CI](https://github.com/shubham-chhimpa/done_it/workflows/CI/badge.svg?branch=master)
+![CI](https://github.com/shubham-chhimpa/done_it/workflows/CI/badge.svg)
 
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Github Followers](https://img.shields.io/github/followers/shubham-chhimpa?label=Follow&style=social)
