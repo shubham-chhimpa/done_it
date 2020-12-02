@@ -17,7 +17,7 @@ It simply loads **Notes** data from in memory database. Notes will be always loa
 - Clean and Simple Material UI.
 - It supports dark theme too 🌗.
 
-# lib Structure
+## lib Structure
     
     .
     ├── core                # For all common and core files.
