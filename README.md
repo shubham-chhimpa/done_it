@@ -19,7 +19,7 @@ It simply loads **Notes** data from in memory database. Notes will be always loa
 - Clean and Simple Material UI.
 - It supports dark theme too 🌗.
 
-## lib Structure
+## Directory Structure
     
     .
     ├── core                # For all common and core files.
@@ -52,6 +52,11 @@ It simply loads **Notes** data from in memory database. Notes will be always loa
 
 ## Architecture
 This app uses [***Clean Architecture by Robert C Martin***]
+
+<img src="https://github.com/ResoCoder/flutter-tdd-clean-architecture-course/blob/master/architecture-proposal.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;"/>
+
+
+Image Source : [ResoCoder](https://resocoder.com)
 
 ## Contribute
 If you want to contribute to this library, you're always welcome!
