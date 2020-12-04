@@ -1,9 +1,43 @@
 
+<div style="text-align: center">
+    <table>
+        <tr>
+            <td style="text-align: center">
+                <img src="/project/images/HomePage.png" width="200"/>
+            </td>
+            <td style="text-align: center">
+                <img src="/project/images/AddTodoPage.png" width="200"/>
+            </td>
+            <td style="text-align: center">
+                <img src="/project/images/ViewTodoPage.png" width="200"/>
+            </td>
+            <td style="text-align: center">
+                <img src="/project/images/SettingPage.png" width="200"/>
+            </td>
+        </tr>
+        <tr>
+             <td style="text-align: center">
+                 <img src="/project/images/HomePage(Dark Mode).png" width="200"/>
+             </td>
+             <td style="text-align: center">
+                 <img src="/project/images/AddTodoPage(Dark Mode).png" width="200"/>
+             </td>
+             <td style="text-align: center">
+                 <img src="/project/images/ViewTodoPage(Dark Mode).png" width="200"/>
+             </td>
+             <td style="text-align: center">
+                 <img src="/project/images/SettingPage(Dark Mode).png" width="200"/>
+             </td>
+        </tr>  
+    </table>
+</div>
+
+
 # DoneIt 📝
 
 ![CI](https://github.com/shubham-chhimpa/done_it/workflows/CI/badge.svg)
 
-[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](/https://github.com/shubham-chhimpa/done_it/LICENSE.md)
 ![Github Followers](https://img.shields.io/github/followers/shubham-chhimpa?label=Follow&style=social)
 ![GitHub stars](https://img.shields.io/github/stars/shubham-chhimpa/done_it?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/shubham-chhimpa/done_it?style=social)
@@ -81,27 +115,3 @@ If you need any help, you can connect with me.
 
 Visit:- [shubham-chhimpa.github.io/](https://shubham-chhimpa.github.io/)
 
-## License
-```
-MIT License
-
-Copyright (c) 2020 Shubham Chhimpa
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
