@@ -17,7 +17,7 @@
         </tr>
         <tr>
              <td style="text-align: center">
-                 <img src="/project/images/HomePage(Dark Mode).png" width="200"/>
+                 <img src="/project/images/HomePage (Dark Mode).png" width="200"/>
              </td>
              <td style="text-align: center">
                  <img src="/project/images/AddTodoPage(Dark Mode).png" width="200"/>
@@ -26,7 +26,7 @@
                  <img src="/project/images/ViewTodoPage(Dark Mode).png" width="200"/>
              </td>
              <td style="text-align: center">
-                 <img src="/project/images/SettingPage(Dark Mode).png" width="200"/>
+                 <img src="/project/images/SettingPage (Dark Mode).png" width="200"/>
              </td>
         </tr>  
     </table>
