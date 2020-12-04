@@ -62,6 +62,20 @@ Image Source : [ResoCoder](https://resocoder.com)
 If you want to contribute to this library, you're always welcome!
 See [Contributing Guidelines](CONTRIBUTING.md). 
 
+## Branches
+    .
+    ├── master                       # Contains the latest release
+           ├── dev                   # Contains the latest development
+                ├── feature1         # feature 1 created from dev
+                ├── feature2         # feature 2 created from dev
+                ├── feature3         # feature 3 created from dev
+                ├── bugFix1          # bugfix 1 created from dev
+                ├── bugFix2          # bugfix 1 created from dev
+                ├── docChange1       # docChange 1 created from dev
+                ├── docChange1       # docChange 2 created from dev
+            
+Note  : Create pull request for feature,bugfix,docChange to only dev branch.
+
 ## Contact
 If you need any help, you can connect with me.
 
