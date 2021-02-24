@@ -113,5 +113,5 @@ Note  : Create pull request for feature,bugfix,docChange to only dev branch.
 ## Contact
 If you need any help, you can connect with me.
 
-Visit:- [shubham-chhimpa.github.io/](https://shubham-chhimpa.github.io/)
+Visit:- [https://www.linkedin.com/in/shubhamchhimpa/](https://www.linkedin.com/in/shubhamchhimpa/)
 
