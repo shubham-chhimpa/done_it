@@ -3,10 +3,12 @@ import 'package:done_it/feature/todo/domain/entities/todo.dart';
 import 'package:done_it/feature/todo/domain/repositories/todo_repository.dart';
 import 'package:done_it/feature/todo/domain/usecases/get_todo.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-class MockTodoRepository extends Mock implements TodoRepository {}
+import 'get_todo_test.mocks.dart';
 
+@GenerateMocks([TodoRepository])
 void main() {
   late GetTodo useCase;
   late MockTodoRepository mockTodoRepository;
@@ -19,7 +21,7 @@ void main() {
   final tTodo = Todo(task: "todo text", id: tId);
   test("should get Todo for the id from the Repository", () async {
     // arrange
-    when(mockTodoRepository.getTodo(1)).thenAnswer((_) async => Right(tTodo));
+    when(mockTodoRepository.getTodo(any)).thenAnswer((_) async => Right(tTodo));
     // act
     final result = await useCase(Params(id: tId));
     // assert
