@@ -10,7 +10,7 @@ abstract class TodoFormEvent extends Equatable {
 class TodoFormAddEvent extends TodoFormEvent {
   final String task;
 
-  TodoFormAddEvent({this.task});
+  TodoFormAddEvent({required this.task});
 
   @override
   List<Object> get props => [task];

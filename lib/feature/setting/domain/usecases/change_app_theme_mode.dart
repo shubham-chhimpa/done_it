@@ -4,7 +4,6 @@ import 'package:done_it/core/usecases/usecase.dart';
 import 'package:done_it/feature/setting/domain/entities/setting.dart';
 import 'package:done_it/feature/setting/domain/repositories/setting_repository.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 
 class ChangeAppThemeMode implements UseCase<void, Params> {
   final SettingRepository settingRepository;
@@ -20,7 +19,7 @@ class ChangeAppThemeMode implements UseCase<void, Params> {
 class Params extends Equatable {
   final AppThemeMode appThemeMode;
 
-  Params({@required this.appThemeMode});
+  Params({required this.appThemeMode});
 
   @override
   List<Object> get props => [appThemeMode];

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class TodoCard extends StatelessWidget {
   final TodoModel todoModel;
 
-  const TodoCard({Key key, this.todoModel}) : super(key: key);
+  const TodoCard({Key? key, required this.todoModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

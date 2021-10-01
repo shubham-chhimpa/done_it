@@ -8,8 +8,8 @@ import 'package:mockito/mockito.dart';
 class MockTodoRepository extends Mock implements TodoRepository {}
 
 void main() {
-  GetTodo useCase;
-  MockTodoRepository mockTodoRepository;
+  late GetTodo useCase;
+  late MockTodoRepository mockTodoRepository;
   setUp(() {
     mockTodoRepository = MockTodoRepository();
     useCase = GetTodo(mockTodoRepository);
@@ -19,7 +19,7 @@ void main() {
   final tTodo = Todo(task: "todo text", id: tId);
   test("should get Todo for the id from the Repository", () async {
     // arrange
-    when(mockTodoRepository.getTodo(any)).thenAnswer((_) async => Right(tTodo));
+    when(mockTodoRepository.getTodo(1)).thenAnswer((_) async => Right(tTodo));
     // act
     final result = await useCase(Params(id: tId));
     // assert

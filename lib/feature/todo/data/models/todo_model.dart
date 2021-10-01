@@ -1,13 +1,12 @@
 import 'package:done_it/feature/todo/domain/entities/todo.dart';
-import 'package:flutter/material.dart';
 
 class TodoModel extends Todo {
   final String task;
   final int id;
 
   TodoModel({
-    @required this.task,
-    @required this.id,
+    required this.task,
+    required this.id,
   }) : super(id: id, task: task);
 
   String getTaskTitle() {

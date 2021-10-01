@@ -6,6 +6,7 @@ abstract class Failure extends Equatable {
   Failure([properties]);
 
   @override
-  List<Object> get props => properties;
+  List<dynamic> get props => properties;
 }
+
 class DataBaseFailure extends Failure {}

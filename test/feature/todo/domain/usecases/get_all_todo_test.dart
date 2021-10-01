@@ -9,8 +9,8 @@ import 'package:mockito/mockito.dart';
 class MockTodoRepository extends Mock implements TodoRepository {}
 
 void main() {
-  MockTodoRepository mockTodoRepository;
-  GetAllTodo getAllTodo;
+  late MockTodoRepository mockTodoRepository;
+  late GetAllTodo getAllTodo;
   setUp(() {
     mockTodoRepository = MockTodoRepository();
     getAllTodo = GetAllTodo(mockTodoRepository);

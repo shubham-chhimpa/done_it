@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-final Color _primaryColor = Colors.yellow[700];
-final Color _appBarColor = Colors.grey[100];
+final Color _primaryColor = Colors.yellow[700]!;
+final Color _appBarColor = Colors.grey[100]!;
 final Color _appBarIconColor = Colors.black87;
 final Color _foreGroundColor = Colors.white;
 
@@ -23,7 +23,5 @@ var lightThemeData = ThemeData(
     ),
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: _primaryColor,
-      foregroundColor: _foreGroundColor
-  ),
+      backgroundColor: _primaryColor, foregroundColor: _foreGroundColor),
 );

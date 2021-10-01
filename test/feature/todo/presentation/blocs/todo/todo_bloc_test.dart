@@ -10,8 +10,8 @@ import 'package:mockito/mockito.dart';
 class MockGetAllTodo extends Mock implements GetAllTodo {}
 
 void main() {
-  TodoBloc todoBloc;
-  MockGetAllTodo mockGetAllTodo;
+  late TodoBloc todoBloc;
+  late MockGetAllTodo mockGetAllTodo;
   setUp(() {
     mockGetAllTodo = MockGetAllTodo();
     todoBloc = TodoBloc(getAllTodo: mockGetAllTodo);
@@ -30,13 +30,14 @@ void main() {
 
     test(
       'should get todo from the getAllTodo use case',
-          () async {
+      () async {
         // arrange
 
-        when(mockGetAllTodo(any)).thenAnswer((_) async => Right(allTodo));
+        when(mockGetAllTodo(NoParams()))
+            .thenAnswer((_) async => Right(allTodo));
         // act
         todoBloc.add(GetTodoListEvent());
-        await untilCalled(mockGetAllTodo(any));
+        await untilCalled(mockGetAllTodo(NoParams()));
         // assert
         verify(mockGetAllTodo(NoParams()));
       },
@@ -44,9 +45,10 @@ void main() {
 
     test(
       'should emit [TodoLoadingState, TodoLoadSuccessState] when data is gotten successfully',
-          () async {
+      () async {
         // arrange
-        when(mockGetAllTodo(any)).thenAnswer((_) async => Right(allTodo));
+        when(mockGetAllTodo(NoParams()))
+            .thenAnswer((_) async => Right(allTodo));
         // assert later
         final expected = [
           TodoLoadingState(),
@@ -60,9 +62,9 @@ void main() {
 
     test(
       'should emit [TodoLoadingState, TodoLoadFailedState] when getting data fails',
-          () async {
+      () async {
         // arrange
-        when(mockGetAllTodo(any))
+        when(mockGetAllTodo(NoParams()))
             .thenAnswer((_) async => Left(DataBaseFailure()));
         // assert later
         final expected = [

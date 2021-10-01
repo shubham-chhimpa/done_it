@@ -4,7 +4,6 @@ import 'package:done_it/core/usecases/usecase.dart';
 import 'package:done_it/feature/todo/domain/entities/todo.dart';
 import 'package:done_it/feature/todo/domain/repositories/todo_repository.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
 
 class GetTodo implements UseCase<Todo, Params> {
   final TodoRepository todoRepository;
@@ -20,7 +19,7 @@ class GetTodo implements UseCase<Todo, Params> {
 class Params extends Equatable {
   final int id;
 
-  Params({@required this.id});
+  Params({required this.id});
 
   @override
   List<Object> get props => [id];
