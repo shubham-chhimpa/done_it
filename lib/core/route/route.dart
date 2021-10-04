@@ -5,7 +5,7 @@ import 'package:done_it/feature/todo/presentation/pages/view_todo_page.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     if (settings.name == AddTodoPage.routeName) {
       return MaterialPageRoute(
         builder: (context) {
@@ -31,11 +31,16 @@ class AppRouter {
     }
 
     if (settings.name == ViewTodoPage.routeName) {
-      final ViewTodoPageArguments viewTodoPageArguments = settings.arguments;
+      final viewTodoPageArguments = settings.arguments;
+      if (viewTodoPageArguments == null) {
+        assert(false, 'Need to implement ${settings.arguments}');
+        return null;
+      }
       return MaterialPageRoute(
         builder: (context) {
           return ViewTodoPage(
-            key: ValueKey(viewTodoPageArguments.todoModel.id),
+            key: ValueKey(
+                (viewTodoPageArguments as ViewTodoPageArguments).todoModel.id),
             todoModel: viewTodoPageArguments.todoModel,
           );
         },

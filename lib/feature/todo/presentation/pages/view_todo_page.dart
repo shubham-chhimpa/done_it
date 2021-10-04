@@ -6,7 +6,7 @@ class ViewTodoPage extends StatelessWidget {
 
   final TodoModel todoModel;
 
-  const ViewTodoPage({Key key, this.todoModel}) : super(key: key);
+  const ViewTodoPage({Key? key, required this.todoModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,7 @@ class ViewTodoPage extends StatelessWidget {
               child: SelectableText(
                 todoModel.getTaskFullBody(),
                 style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    height: 1.5
-                ),
+                    fontSize: 16, fontWeight: FontWeight.w400, height: 1.5),
               ),
             ),
           ],
@@ -37,5 +34,5 @@ class ViewTodoPage extends StatelessWidget {
 class ViewTodoPageArguments {
   final TodoModel todoModel;
 
-  ViewTodoPageArguments({@required this.todoModel});
+  ViewTodoPageArguments({required this.todoModel});
 }

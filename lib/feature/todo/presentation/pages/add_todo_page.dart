@@ -14,7 +14,7 @@ class AddTodoPage extends StatefulWidget {
 
 class AddTodoPageState extends State<AddTodoPage> {
   final _formKey = GlobalKey<FormState>();
-  String _task;
+  String? _task;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +24,11 @@ class AddTodoPageState extends State<AddTodoPage> {
           IconButton(
             icon: Icon(Icons.check),
             onPressed: () {
-              if (_formKey.currentState.validate()) {
-                _formKey.currentState.save();
+              if (_formKey.currentState?.validate() == true && _task != null) {
+                _formKey.currentState?.save();
                 BlocProvider.of<TodoFormBloc>(context).add(
                   TodoFormAddEvent(
-                    task: _task,
+                    task: _task!,
                   ),
                 );
               }
@@ -75,12 +75,12 @@ class AddTodoPageState extends State<AddTodoPage> {
                 maxLines: 99999,
                 autofocus: true,
                 validator: (value) {
-                  if (value.isEmpty) {
+                  if (value?.isEmpty == true) {
                     return 'Please enter some text';
                   }
                   return null;
                 },
-                onSaved: (value) {
+                onChanged: (value) {
                   _task = value;
                 },
               ),

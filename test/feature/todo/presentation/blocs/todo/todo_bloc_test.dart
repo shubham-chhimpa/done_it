@@ -5,13 +5,15 @@ import 'package:done_it/feature/todo/domain/entities/todo.dart';
 import 'package:done_it/feature/todo/domain/usecases/get_all_todo.dart';
 import 'package:done_it/feature/todo/presentation/blocs/todo/todo_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-class MockGetAllTodo extends Mock implements GetAllTodo {}
+import 'todo_bloc_test.mocks.dart';
 
+@GenerateMocks([GetAllTodo])
 void main() {
-  TodoBloc todoBloc;
-  MockGetAllTodo mockGetAllTodo;
+  late TodoBloc todoBloc;
+  late MockGetAllTodo mockGetAllTodo;
   setUp(() {
     mockGetAllTodo = MockGetAllTodo();
     todoBloc = TodoBloc(getAllTodo: mockGetAllTodo);
@@ -30,13 +32,13 @@ void main() {
 
     test(
       'should get todo from the getAllTodo use case',
-          () async {
+      () async {
         // arrange
 
         when(mockGetAllTodo(any)).thenAnswer((_) async => Right(allTodo));
         // act
         todoBloc.add(GetTodoListEvent());
-        await untilCalled(mockGetAllTodo(any));
+        await untilCalled(mockGetAllTodo(NoParams()));
         // assert
         verify(mockGetAllTodo(NoParams()));
       },
@@ -44,7 +46,7 @@ void main() {
 
     test(
       'should emit [TodoLoadingState, TodoLoadSuccessState] when data is gotten successfully',
-          () async {
+      () async {
         // arrange
         when(mockGetAllTodo(any)).thenAnswer((_) async => Right(allTodo));
         // assert later
@@ -52,7 +54,7 @@ void main() {
           TodoLoadingState(),
           TodoLoadSuccessState(todoList: allTodo),
         ];
-        expectLater(todoBloc, emitsInOrder(expected));
+        expectLater(todoBloc.stream, emitsInOrder(expected));
         // act
         todoBloc.add(GetTodoListEvent());
       },
@@ -60,7 +62,7 @@ void main() {
 
     test(
       'should emit [TodoLoadingState, TodoLoadFailedState] when getting data fails',
-          () async {
+      () async {
         // arrange
         when(mockGetAllTodo(any))
             .thenAnswer((_) async => Left(DataBaseFailure()));
@@ -69,7 +71,7 @@ void main() {
           TodoLoadingState(),
           TodoLoadFailedState(),
         ];
-        expectLater(todoBloc, emitsInOrder(expected));
+        expectLater(todoBloc.stream, emitsInOrder(expected));
         // act
         todoBloc.add(GetTodoListEvent());
       },

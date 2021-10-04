@@ -5,7 +5,7 @@ import 'package:done_it/feature/todo/domain/entities/todo.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  TodoLocalDataSourceImpl todoLocalDataSourceImpl;
+  late TodoLocalDataSourceImpl todoLocalDataSourceImpl;
   setUp(() {
     todoLocalDataSourceImpl = TodoLocalDataSourceImpl();
   });
@@ -22,36 +22,36 @@ void main() {
 
     test(
         "should throw Database Exception when there is no todo exists with the given id",
-            () async {
-          final int tId = 10;
-          // act
-          final call = todoLocalDataSourceImpl.getTodo;
-          // assert
-          expect(() => call(tId), throwsA(isInstanceOf<DataBaseException>()));
-        });
+        () async {
+      final int tId = 10;
+      // act
+      final call = todoLocalDataSourceImpl.getTodo;
+      // assert
+      expect(() => call(tId), throwsA(isInstanceOf<DataBaseException>()));
+    });
   });
 
   group("getAllTodo", () {
     test("should return list of sll todo from local in memory data source",
-            () async {
-          List<TodoModel> todoModelList = todoLocalDataSourceImpl.todoModelList;
-          // act
-          final result = await todoLocalDataSourceImpl.getAllTodo();
-          // assert
-          expect(result, todoModelList);
-        });
+        () async {
+      List<TodoModel> todoModelList = todoLocalDataSourceImpl.todoModelList;
+      // act
+      final result = await todoLocalDataSourceImpl.getAllTodo();
+      // assert
+      expect(result, todoModelList);
+    });
   });
 
   group("addTodo", () {
     test("should add a todo and return it from local in memory data source",
-            () async {
-          final String tTask = "test";
-          final int tId = todoLocalDataSourceImpl.todoModelList.length;
-          final Todo tTodoModel = TodoModel(task: tTask, id: tId);
-          // act
-          final result = await todoLocalDataSourceImpl.addTodo(tTask);
-          // assert
-          expect(result, tTodoModel);
-        });
+        () async {
+      final String tTask = "test";
+      final int tId = todoLocalDataSourceImpl.todoModelList.length;
+      final Todo tTodoModel = TodoModel(task: tTask, id: tId);
+      // act
+      final result = await todoLocalDataSourceImpl.addTodo(tTask);
+      // assert
+      expect(result, tTodoModel);
+    });
   });
 }

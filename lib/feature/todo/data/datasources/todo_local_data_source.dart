@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:done_it/core/error/exceptions.dart';
 import 'package:done_it/feature/todo/data/models/todo_model.dart';
 import 'package:done_it/feature/todo/domain/entities/todo.dart';
@@ -18,7 +19,7 @@ class TodoLocalDataSourceImpl implements TodoLocalDataSource {
   List<TodoModel> todoModelList = [
     TodoModel(
         task:
-        'This is a very long to be done by me! I have to develop ViewTodoPage and edit todo page. Then i have to develop delete todo function. This is a very long to be done by me! I have develop view todo page and edit todo page. then i have tp develop delete todo function',
+            'This is a very long to be done by me! I have to develop ViewTodoPage and edit todo page. Then i have to develop delete todo function. This is a very long to be done by me! I have develop view todo page and edit todo page. then i have tp develop delete todo function',
         id: 0),
     TodoModel(task: 'task2', id: 1),
     TodoModel(task: 'task3', id: 2),
@@ -27,8 +28,8 @@ class TodoLocalDataSourceImpl implements TodoLocalDataSource {
 
   @override
   Future<TodoModel> getTodo(int id) {
-    final TodoModel todoModel = todoModelList
-        .firstWhere((element) => element.id == id, orElse: () => null);
+    final TodoModel? todoModel =
+        todoModelList.firstWhereOrNull((element) => element.id == id);
     if (todoModel != null) {
       return Future.delayed(const Duration(seconds: 1), () => todoModel);
     } else {
@@ -44,7 +45,7 @@ class TodoLocalDataSourceImpl implements TodoLocalDataSource {
   @override
   Future<Todo> addTodo(String task) {
     return Future.delayed(const Duration(seconds: 1), () {
-      final Todo todo = TodoModel(task: task, id: todoModelList.length);
+      final todo = TodoModel(task: task, id: todoModelList.length);
       todoModelList.add(todo);
       return todo;
     });

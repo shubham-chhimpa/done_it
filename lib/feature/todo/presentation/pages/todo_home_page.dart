@@ -1,4 +1,5 @@
 import 'package:done_it/feature/setting/presentation/pages/setting_page.dart';
+import 'package:done_it/feature/todo/data/models/todo_model.dart';
 import 'package:done_it/feature/todo/presentation/blocs/todo/todo_bloc.dart';
 import 'package:done_it/feature/todo/presentation/blocs/todo_form/todo_form_bloc.dart';
 import 'package:done_it/feature/todo/presentation/pages/add_todo_page.dart';
@@ -50,13 +51,13 @@ class TodoHomePage extends StatelessWidget {
                           context,
                           ViewTodoPage.routeName,
                           arguments: ViewTodoPageArguments(
-                            todoModel: state.todoList[index],
+                            todoModel: state.todoList[index] as TodoModel,
                           ),
                         );
                       },
                       child: TodoCard(
                         key: ValueKey(index),
-                        todoModel: state.todoList[index],
+                        todoModel: state.todoList[index] as TodoModel,
                       ),
                     );
                   },

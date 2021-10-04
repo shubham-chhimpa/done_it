@@ -3,13 +3,15 @@ import 'package:done_it/feature/todo/domain/entities/todo.dart';
 import 'package:done_it/feature/todo/domain/repositories/todo_repository.dart';
 import 'package:done_it/feature/todo/domain/usecases/get_todo.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-class MockTodoRepository extends Mock implements TodoRepository {}
+import 'get_todo_test.mocks.dart';
 
+@GenerateMocks([TodoRepository])
 void main() {
-  GetTodo useCase;
-  MockTodoRepository mockTodoRepository;
+  late GetTodo useCase;
+  late MockTodoRepository mockTodoRepository;
   setUp(() {
     mockTodoRepository = MockTodoRepository();
     useCase = GetTodo(mockTodoRepository);

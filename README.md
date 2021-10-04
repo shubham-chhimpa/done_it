@@ -1,4 +1,3 @@
-
 <div style="text-align: center">
     <table>
         <tr>
@@ -32,7 +31,6 @@
     </table>
 </div>
 
-
 # DoneIt 📝
 
 ![CI](https://github.com/shubham-chhimpa/done_it/workflows/CI/badge.svg)
@@ -44,17 +42,18 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/shubham-chhimpa/done_it?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/shubham_chhimpa?label=Follow&style=social)
 
-**DoneIt** is a sample note app 📝 Flutter application 📱 built to demonstrate use of *Clean Architecture* tools. Dedicated to all Flutter Developers with ❤️. 
-
+**DoneIt** is a sample note app 📝 Flutter application 📱 built to demonstrate use of _Clean Architecture_ tools. Dedicated to all Flutter Developers with ❤️.
 
 ## About
-It simply loads **Notes** data from in memory database. Notes will be always loaded from in memor database. 
-- This makes it offline capable 😃. 
+
+It simply loads **Notes** data from in memory database. Notes will be always loaded from in memor database.
+
+- This makes it offline capable 😃.
 - Clean and Simple Material UI.
 - It supports dark theme too 🌗.
 
 ## Directory Structure
-    
+
     .
     ├── core                       # For all common and core files.
     │   ├── error                  # contains all Exceptions and Failures classes
@@ -66,37 +65,36 @@ It simply loads **Notes** data from in memory database. Notes will be always loa
     │   └── theme                  # Theme data
     │   └── usecases               # common usecases
     |
-    ├── feature                    # all features           
+    ├── feature                    # all features
         ├── feature1               # Feature 1 (for exp : Todo Feature)
             ├── data               # Data Files of Feature 1
-            ├   └── datasources    # DataSources Abstract Files and Implementations   
-            ├   └── models         # Models for data   
-            ├   └── repositories   # Repositories Implementation Classes   
-            └── domain             # Domain 
-            ├   └── entities       # Entities For Feature 1   
-            ├   └── usecases       # Usecases of Feature 1   
+            ├   └── datasources    # DataSources Abstract Files and Implementations
+            ├   └── models         # Models for data
+            ├   └── repositories   # Repositories Implementation Classes
+            └── domain             # Domain
+            ├   └── entities       # Entities For Feature 1
+            ├   └── usecases       # Usecases of Feature 1
             ├   └── repositories   #   Repositories Abstract Classes
             ├── presentation       # Feature 1 presentation files
             │   └── blocs          # Feature 1 blocs
             │   └── pages          # Feature 1 pages
-            │   └── widgets        # Feature 1 widgets 
-   
-   
-
+            │   └── widgets        # Feature 1 widgets
 
 ## Architecture
+
 This app uses [***Clean Architecture by Robert C Martin***]
 
 <img src="https://github.com/ResoCoder/flutter-tdd-clean-architecture-course/blob/master/architecture-proposal.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;"/>
 
-
 Image Source : [ResoCoder](https://resocoder.com)
 
 ## Contribute
+
 If you want to contribute to this library, you're always welcome!
-See [Contributing Guidelines](CONTRIBUTING.md). 
+See [Contributing Guidelines](CONTRIBUTING.md).
 
 ## Branches
+
     .
     ├── master                       # Contains the latest release
            ├── dev                   # Contains the latest development
@@ -107,11 +105,11 @@ See [Contributing Guidelines](CONTRIBUTING.md).
                 ├── bugFix2          # bugfix 1 created from dev
                 ├── docChange1       # docChange 1 created from dev
                 ├── docChange1       # docChange 2 created from dev
-            
-Note  : Create pull request for feature,bugfix,docChange to only dev branch.
+
+Note : Create pull request for feature,bugfix,docChange to only dev branch.
 
 ## Contact
+
 If you need any help, you can connect with me.
 
 Visit:- [https://www.linkedin.com/in/shubhamchhimpa/](https://www.linkedin.com/in/shubhamchhimpa/)
-
